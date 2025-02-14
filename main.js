@@ -18,35 +18,33 @@ askWord(palindrome)
 /* Pari e Dispari */
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri. Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 
-// chiedo all'utente un numero da 1 a 5
+// chiedo all'utente se sceglie pari o dispari
+const askEvenOrOdd = prompt("Scegli pari o dispari");
+console.log(askEvenOrOdd);
+// chiedo all'utente di inserire un numero da 1 a 5
 let randomNumberPlayer = prompt("Inserisci un numero da 1 a 5");
+console.log(randomNumberPlayer);
+
 // genero un numero random da 1 a 5 per il PC con una funzione
 function askNumberPC(){
     let randomNumberPC = (Math.floor(Math.random() * 5) + 1);
-
+    console.log(randomNumberPC);
 }
 
-//sommo i due numeri
+// sommo i due numeri
 function sum(randomNumberPlayer, randomNumberPC) {
     const result = randomNumberPlayer + randomNumberPC;
     return result
 }
 
-function numberIdentity(numb) {
-    if (numb % 2 === 0) {
+// verifico se la somma è pari o dispari con una funzione e dichiaro il vincitore
+function isEvenOrOdd(sum) {
+    if (sum % 2 === 0) {
         return true
     } else {
         return false
     }
 }
 
-
-
-numberIdentity(thisNumber)
-
-if (numberIdentity(thisNumber)) {
-    console.log("Questo numero è pari");
-} else {
-    console.log("Questo numero è dispari");
-}
+isEvenOrOdd(sum)
 
